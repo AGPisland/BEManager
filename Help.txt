@@ -1,0 +1,47 @@
+URL útiles:
+https://www.djamware.com/post/5b56a6cc80aca707dd4f65a9/nodejs-expressjs-sequelizejs-and-postgresql-restful-api
+https://stackoverflow.com/questions/34120548/using-bcrypt-with-sequelize-model
+https://evdokimovm.github.io/javascript/nodejs/faker/2016/04/11/Generate-Fake-Data-with-FakerJS.html
+https://stackoverflow.com/questions/48219958/sequelize-sequelize-cli-seeding-bulk-amount-of-random-data
+https://gist.github.com/vapurrmaid/a111bf3fc0224751cb2f76532aac2465
+https://www.npmjs.com/package/faker
+
+http://muchocodigo.com/concatenar-cadenas-en-javascript/
+https://www.geeksforgeeks.org/javascript-string-prototype-concat-function/
+
+Modelos:
+- Entidad-Relación: https://drive.google.com/file/d/14iXNctfa5Ol7HPrXq_IV8iBjK3s4PYce/view?usp=sharing
+
+Comandos:
+sudo -u postgres psql # Entrar en la consola de comandos de Postgresql con el usuario postgres
+service postgresql restart # Reiniciar servicio de postgres
+
+
+ALTER USER postgres WITH PASSWORD '&NuevaClave'; #Cambiar la contraseña del usuario postgres en psql
+\l # Listar las bases de datos que existan
+CREATE DATABASE &nombre; # Crea una base de datos con el nombre &nombre
+DROP DATABASE &target_database; # Eliminar una de las Bases de datos listadas
+\c &Nombre_BDD # Conectarse a una de las bases de datos listadas
+\q # Desconectarse de la base de datos actual
+\dt # Listar las tablas dentro de la base de datos a la que se conectó
+\d+ "&Nombre_Tabla" # Describe las columnas de una de las tablas vistas anteriormente
+
+### Crear un modelo ###
+sequelize model:create --name Chequeo_Aporte_Curso --attributes id_usuario:integer,id_aporte_curso:integer,visto:boolean
+
+### Echar a andar las migraciones ###
+sequelize db:migrate
+
+### Crear un seeder ###
+sequelize seed:create --name my-seed-file
+
+### Echar a andar los seeders ###
+sequelize db:seed:all
+
+git status
+git add *
+git commit -m "&TextoAEscribir"
+git push origin master
+git pull origin master
+
+npm install
