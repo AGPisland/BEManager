@@ -9,10 +9,14 @@ module.exports = (sequelize, DataTypes) => {
     invoice_phone: DataTypes.TEXT
   });
   Compania.associate = function(models){
-    Compania.hasMany(models.Usuarioapi);
+    Compania.hasMany(models.Usuarioapi,{
+      foreignKey:"id"
+    });
   };
   Compania.associate = function(models){
-    Compania.hasMany(models.Device);
+    Compania.hasMany(models.Device,{
+      foreignKey:"id"
+    });
   };
   return Compania;
 };

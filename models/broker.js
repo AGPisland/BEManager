@@ -6,14 +6,18 @@ module.exports = (sequelize, DataTypes) => {
     run_task: DataTypes.BOOLEAN,
     estado_task: DataTypes.BOOLEAN,
     contador_task: DataTypes.INTEGER,
-    key_broker_mqtt : DataTypes.JSON
+    key_broker_mqtt: DataTypes.JSON
   });
-  Broker.associate = function(models) {
-    Broker.hasOne(models.Device);
+  Broker.associate = function (models) {
+    Broker.hasOne(models.Device, {
+      foreignKey: 'id'
+
+    });
   };
-  Broker.associate = function(models){
-    Broker.hasMany(models.Registro);
+  Broker.associate = function (models) {
+    Broker.belongsToMany(models.Device, {
+      foreignKey: 'id'
+    });
   };
   return Broker;
 };
- 

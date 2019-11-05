@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     datasensado: DataTypes.JSON 
   });
   Registro.associate = function(models) {
-    Registro.belongsTo(models.Broker,{
+    Registro.hasOne(models.Broker,{
       foreignKey: 'id_broker',
       constraints: false
     });
