@@ -21,7 +21,7 @@ router.put('/api/clientes/:id', clienteController.update);
 router.delete('/api/clientes/:id', clienteController.delete);
 
 const brokerController = require('../controllers').broker;
-router.get('/api/brokers', broker.list);
+router.get('/api/brokers', brokerController.list);
 router.get('/api/brokers/:id', brokerController.getById);
 router.post('/api/brokers', brokerController.add);
 router.put('/api/brokers/:id', brokerController.update);

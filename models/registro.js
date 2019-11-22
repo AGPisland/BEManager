@@ -1,14 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Registro = sequelize.define('registro', {
+  const Registro = sequelize.define('Registro', {
     id_broker: DataTypes.INTEGER,
     timer: DataTypes.JSON,
     metadata: DataTypes.JSON,
     datasensado: DataTypes.JSON 
   });
   Registro.associate = function(models) {
-    Registro.hasOne(models.Broker,{
+    Registro.belongsToMany(models.Broker,{
       foreignKey: 'id_broker',
+      through: 'brokerregistro',
       constraints: false
     });
   };
