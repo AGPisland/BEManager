@@ -2,10 +2,7 @@ const Usuario = require('../models').Usuario;
 
 module.exports = {
   list(req, res) {
-    return Usuario
-      .findAll()
-      .then((usuarios) => res.status(200).send(usuarios))
-      .catch((error) => { res.status(400).send(error); });
+    return Usuario.findAll().then((Usuarios) => res.status(200).send(Usuarios)).catch((error) => { res.status(400).send(error); });
   },
 
   getById(req, res) {
@@ -13,6 +10,7 @@ module.exports = {
       .findByPk(req.params.id)
       .then((usuario) => {
         if (!usuario) {
+          console.log(req.params.id)
           return res.status(404).send({
             message: 'Usuario Not Found',
           });

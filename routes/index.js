@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let parseToken = require("./middlewares/token");
+let parseToken = require("./middlewares/token"); 
 
 //Rutas a los controladores personalizados
 
@@ -12,13 +12,21 @@ router.post('/api/usuarios', usuarioController.add);
 router.put('/api/usuarios/:id', usuarioController.update);
 router.delete('/api/usuarios/:id', usuarioController.delete);
 
-const clienteController = require('../controllers').cliente;
+const usuarioapiController = require('../controllers').usuarioapi;
 
-router.get('/api/clientes', clienteController.list);
-router.get('/api/clientes/:id', clienteController.getById);
-router.post('/api/clientes', clienteController.add);
-router.put('/api/clientes/:id', clienteController.update);
-router.delete('/api/clientes/:id', clienteController.delete);
+router.get('/api/usuarioapi', usuarioapiController.list);
+router.get('/api/usuarioapi/:id', usuarioapiController.getById);
+router.post('/api/usuarioapi', usuarioapiController.add);
+router.put('/api/usuarioapi/:id', usuarioapiController.update);
+router.delete('/api/usuarioapi/:id', usuarioapiController.delete);
+
+const companiaController = require('../controllers').compania;
+
+router.get('/api/compania', companiaController.list);
+router.get('/api/compania/:id', companiaController.getById);
+router.post('/api/compania', companiaController.add);
+router.put('/api/compania/:id', companiaController.update);
+router.delete('/api/compania/:id', companiaController.delete);
 
 const brokerController = require('../controllers').broker;
 router.get('/api/brokers', brokerController.list);

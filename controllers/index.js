@@ -1,7 +1,8 @@
 const usuario = require('./usuario');
 const broker = require('./broker');
 const device = require('./device');
-const cliente = require('./cliente');
+const compania = require('./compania');
+const usuarioapi = require('./usuarioapi');
 const registro = require('./registro');
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
   broker,
   registro,
   device,
-  cliente
+  compania,
+  usuarioapi
   
 };

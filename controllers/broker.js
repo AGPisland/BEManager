@@ -1,4 +1,4 @@
-const Broker = require('../models').Broker;
+const Broker = require('../models').broker;
 
 module.exports={
     list(req, res) {

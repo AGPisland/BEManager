@@ -1,74 +1,70 @@
 //const Aporte = require('../models').Aporte;
 //const Curso = require('../models').Curso;
 
-const Cliente = require('../models').Cliente;
+const Compania = require('../models').compania;
 
 module.exports = {
   list(req, res) {
-    return Cliente
+    return Compania
       .findAll()
-      .then((clientes) => res.status(200).send(clientes))
+      .then((compania) => res.status(200).send(compania))
       .catch((error) => { res.status(400).send(error); });
   },
   add(req, res) {
-    return Cliente
+    return Compania
       .create({
+        rut_empresa:req.body.rut_empresa,
         name: req.body.name,
         nombre_representante: req.body.nombre_representante,
         invoice_address: req.body.invoice_address,
         invoice_email: req.body.invoice_email,
         invoice_phone: req.body.invoice_phone,
-        user_api: req.body.user_api,
-        keys_json: req.body.keys_json,
-        estado_api: req.body.estado_api,
       })
-      .then((cliente) => res.status(201).send(cliente))
+      .then((compania) => res.status(201).send(compania))
       .catch((error) => res.status(400).send(error));
   },
   getById(req, res) {
-    return Cliente
+    return Compania
       .findOne({
         where: { id: req.params.id }
       })
-      .then((cliente) => {
-        if (!cliente) {
+      .then((compania) => {
+        if (!compania) {
           return res.status(404).send({
             message: 'Aporte Not Found',
           });
         }
-        return res.status(200).send(cliente);
+        return res.status(200).send(compania);
       })
       .catch((error) => res.status(400).send(error));
   },
   update(req, res) {
-    return Cliente
+    return Compania
       .findOne({
         where: { id: req.params.id },
       })
-      .then(cliente => {
-        if (!cliente) {
+      .then(compania => {
+        if (!compania) {
           return res.status(404).send({
             message: 'Aporte Not Found',
           });
         }
-        return cliente
+        return compania
           .update({
-            name: req.body.name || cliente.name,
-            nombre_representante: req.body.nombre_representante || cliente.nombre_representante,
-            invoice_address: req.body.invoice_address || cliente.invoice_address,
-            invoice_email: req.body.invoice_email || cliente.invoice_email,
-            invoice_phone: req.body.invoice_phone || cliente.invoice_phone,
-            user_api: req.body.user_api || cliente.user_api,
-            keys_json: req.body.keys_json || cliente.keys_json,
-            estado_api: req.body.estado_api || cliente.estado_api,
+            rut_empresa:req.body.rut_empresa || compania.rut_empresa,
+            name: req.body.name || compania.name,
+            nombre_representante: req.body.nombre_representante || compania.nombre_representante,
+            invoice_address: req.body.invoice_address || compania.invoice_address,
+            invoice_email: req.body.invoice_email || compania.invoice_email,
+            invoice_phone: req.body.invoice_phone || compania.invoice_phone,
           })
-          .then(() => res.status(200).send(cliente))
+          .then(() => res.status(200).send(compania))
           .catch((error) => res.status(400).send(error));
       })
       .catch((error) => res.status(400).send(error));
   },
   delete(req, res) {
-    return Cliente
+    return Compania
       .destroy({
         where: { id: req.params.id },
         force: true
