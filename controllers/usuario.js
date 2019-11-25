@@ -1,10 +1,14 @@
 const Usuario = require('../models').Usuario;
 
+
+
 module.exports = {
   list(req, res) {
-    return Usuario.findAll().then((Usuarios) => res.status(200).send(Usuarios)).catch((error) => { res.status(400).send(error); });
+    return Usuario
+      .findAll()
+      .then((usuarios) => res.status(200).send(usuarios))
+      .catch((error) => { res.status(400).send(error); });
   },
-
   getById(req, res) {
     return Usuario
       .findByPk(req.params.id)
@@ -80,4 +84,5 @@ module.exports = {
       })
       .catch((error) => res.status(400).send(error));
   },
+
 };

@@ -1,7 +1,7 @@
 //const Aporte = require('../models').Aporte;
 //const Curso = require('../models').Curso;
 
-const Compania = require('../models').compania;
+const Compania = require('../models').Compania;
 
 module.exports = {
   list(req, res) {
@@ -13,7 +13,7 @@ module.exports = {
   add(req, res) {
     return Compania
       .create({
-        rut_empresa:req.body.rut_empresa,
+        rut_empresa: req.body.rut_empresa,
         name: req.body.name,
         nombre_representante: req.body.nombre_representante,
         invoice_address: req.body.invoice_address,
@@ -51,7 +51,7 @@ module.exports = {
         }
         return compania
           .update({
-            rut_empresa:req.body.rut_empresa || compania.rut_empresa,
+            rut_empresa: req.body.rut_empresa || compania.rut_empresa,
             name: req.body.name || compania.name,
             nombre_representante: req.body.nombre_representante || compania.nombre_representante,
             invoice_address: req.body.invoice_address || compania.invoice_address,

@@ -4,7 +4,7 @@ let parseToken = require("./middlewares/token");
 
 //Rutas a los controladores personalizados
 
-const usuarioController = require('../controllers').usuario;
+const   usuarioController = require('../controllers').usuario;
 
 router.get('/api/usuarios', usuarioController.list);
 router.get('/api/usuarios/:id', usuarioController.getById);
