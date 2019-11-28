@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
   });
   Broker.associate = function (models) {
     Broker.hasMany(models.Registro, {
-      foreignKey: 'id'
+      foreignKey: 'id_broker'
     });
     Broker.belongsTo(models.Device, {
-      foreignKey: 'id'
+      foreignKey: 'id_brok'
     });
   };
   /*
