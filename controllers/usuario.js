@@ -1,7 +1,5 @@
 const Usuario = require('../models').Usuario;
 
-
-
 module.exports = {
   list(req, res) {
     return Usuario

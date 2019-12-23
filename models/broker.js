@@ -12,9 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     Broker.hasMany(models.Registro, {
       foreignKey: 'id_broker'
     });
+    /*
     Broker.belongsTo(models.Device, {
       foreignKey: 'id_brok'
     });
+    */
   };
   /*
   

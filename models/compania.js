@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "id"
     });
     Compania.hasMany(models.Device, {
-      foreignKey: "id"
+      foreignKey: "id_comp"
     });
   };
 

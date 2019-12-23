@@ -13,15 +13,17 @@ module.exports = (sequelize, DataTypes) => {
   });
   Device.associate = function (models) {
     Device.belongsToMany(models.Compania, {
-      foreignKey: 'id_comp',
+      foreignKey: 'id',
       through: 'companiadevice',
       constraints: false
     });
+    /*
     Device.hasOne(models.Broker, {
-      foreignKey: 'id_brok',
+      foreignKey: 'id',
+      as : 'id_brok',
       constraints: false
     });
-  
+    */
   };
   
   return Device;

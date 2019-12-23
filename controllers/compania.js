@@ -31,7 +31,7 @@ module.exports = {
       .then((compania) => {
         if (!compania) {
           return res.status(404).send({
-            message: 'Aporte Not Found',
+            message: 'COMPANIA Not Found',
           });
         }
         return res.status(200).send(compania);
@@ -46,7 +46,7 @@ module.exports = {
       .then(compania => {
         if (!compania) {
           return res.status(404).send({
-            message: 'Aporte Not Found',
+            message: 'COMPANIA Not Found',
           });
         }
         return compania
