@@ -6,7 +6,8 @@ module.exports = {
       .findAll()
       .then((registros) => res.status(200).send(registros))
       .catch((error) => { res.status(400).send(error); });
-  },
+  }
+  ,
   getById(req, res) {
     return Registro
       .findOne({
@@ -21,5 +22,5 @@ module.exports = {
         return res.status(200).send(registro);
       })
       .catch((error) => res.status(400).send(error));
-  },
+  }
 }

@@ -27,18 +27,20 @@ router.get('/api/compania/:id', companiaController.getById);
 router.post('/api/compania', companiaController.add);
 router.put('/api/compania/:id', companiaController.update);
 router.delete('/api/compania/:id', companiaController.delete);
-
-const brokerController = require('../controllers').broker;
+console.log("dead")
+const brokerController = require('../controllers/broker');
+console.log("no dead")
 router.get('/api/brokers', brokerController.list);
 router.get('/api/brokers/:id', brokerController.getById);
 router.post('/api/brokers', brokerController.add);
 router.put('/api/brokers/:id', brokerController.update);
 router.delete('/api/brokers/:id',brokerController.delete);
-
+console.log("no dead")
 const registroController = require('../controllers').registro;
+console.log("no dead")
 router.get('/api/registros', registroController.list);
 router.get('/api/registros/:id', registroController.getById);
-
+console.log("no dead")
 const deviceController = require('../controllers').device;
 router.get('/api/devices/', deviceController.list);
 router.get('/api/devices/:id', deviceController.getById);

@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Usuariosapis',{
-      id:{
+    return queryInterface.createTable("Usuariosapis", {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -13,30 +13,29 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: 'companias',
-          key: 'id'
+          model: "Companias",
+          key: "id"
         }
       },
-      name_usuario:{
+      name_usuario: {
         allowNull: false,
-        type:Sequelize.TEXT
+        type: Sequelize.TEXT
       },
-      
-      invoice_email:{
+      invoice_email: {
         allowNull: false,
-        type:Sequelize.TEXT
+        type: Sequelize.TEXT
       },
-      invoice_phone:{
+      invoice_phone: {
         allowNull: false,
-        type:Sequelize.TEXT
+        type: Sequelize.TEXT
       },
-      keys_json:{
-        allowNull:false,
-        type:Sequelize.JSON
+      keys_json: {
+        allowNull: false,
+        type: Sequelize.JSON
       },
-      estado_api:{
-        allowNull:false,
-        type:Sequelize.BOOLEAN
+      estado_api: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: true,
@@ -46,13 +45,9 @@ module.exports = {
         allowNull: true,
         type: Sequelize.DATE
       }
-    
     });
   },
-
   down: (queryInterface, Sequelize) => {
-    down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('usuariosapis');
-    }
+    return queryInterface.dropTable("usuariosapis");
   }
 };

@@ -13,16 +13,6 @@ module.exports = {
         allowNull:false,
         type:Sequelize.TEXT
       },
-      /*
-      id_dev: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'devices',
-          key: 'id'
-        }
-      },
-      */
       run_task:{
         allowNull:false,
         type:Sequelize.BOOLEAN
@@ -50,6 +40,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('brokers');
+    return queryInterface.dropTable('Brokers');
   }
 };

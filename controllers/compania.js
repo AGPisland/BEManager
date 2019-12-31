@@ -21,7 +21,8 @@ module.exports = {
         invoice_phone: req.body.invoice_phone,
       })
       .then((compania) => res.status(201).send(compania))
-      .catch((error) => res.status(400).send(error));
+      .catch((error) => { console.log(error);
+        res.status(400).send(error);});
   },
   getById(req, res) {
     return Compania

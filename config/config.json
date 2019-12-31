@@ -5,13 +5,6 @@
     "database": "manager",
     "host": "managiot.czg6zbor9eqx.us-east-2.rds.amazonaws.com",
     "dialect": "postgres"
-  },
-  "test": {
-    "username": "postgres",
-    "password": "mJgILYCgvpJvStyEqhbt",
-    "database": "manager",
-    "host": "managiot.czg6zbor9eqx.us-east-2.rds.amazonaws.com",
-    "dialect": "postgres"
   }
 
 }

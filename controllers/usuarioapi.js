@@ -13,7 +13,7 @@ module.exports = {
   add(req, res) {
     return API
       .create({
-        name_usuario: req.body.nombre_usuario,
+        name_usuario: req.body.name_usuario,
         id_comp: req.body.id_comp,
         invoice_email: req.body.invoice_email,
         invoice_phone: req.body.invoice_phone,
@@ -21,7 +21,10 @@ module.exports = {
         estado_api: req.body.estado_api,
       })
       .then((usuarioapi) => res.status(201).send(usuarioapi))
-      .catch((error) => res.status(400).send(error));
+      .catch((error) => { 
+        console.log("el errorsito", error); 
+        res.status(400).send(error);
+      });
   },
   getById(req, res) {
     return API
