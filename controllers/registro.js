@@ -3,11 +3,10 @@ const Registro = require('../models').Registro;
 module.exports = {
   list(req, res) {
     return Registro
-      .findAll()
+      .query("SELECT 1")
       .then((registros) => res.status(200).send(registros))
       .catch((error) => { res.status(400).send(error); });
-  }
-  ,
+  },
   getById(req, res) {
     return Registro
       .findOne({

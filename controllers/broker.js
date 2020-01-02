@@ -15,9 +15,9 @@ exports.add = (req, res)  => {
 }
 
 exports.list =  ( req, res)  => {
-    Broker.findAll()
-    .then((brokers) => { return res.status(200).send(brokers)})
-    .catch((error) => {  console.log(error); return res.status(400).send(error); });
+    return Broker.findAll()
+    .then((brokers) => {  res.status(200).send(brokers)})
+    .catch((error) => {  res.status(400).send(error); });
 }
 
 
